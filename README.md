@@ -34,6 +34,10 @@ Lung_Cancer_Detection/
 ├── requirements.txt         # List of external dependencies
 └── README.md                # Project documentation
 
+
+---
+
+
 🛠️ Installation & Setup
 Follow these steps to run the project locally on your machine:
 
