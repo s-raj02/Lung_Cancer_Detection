@@ -2,4 +2,9 @@ venv/
 __pycache__/
 *.pyc
 .env
-node_modules/
+
+# ML models
+*.h5
+*.pt
+*.pkl
+*.joblib
