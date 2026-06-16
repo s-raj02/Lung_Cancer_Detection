@@ -1,6 +1,7 @@
+*.h5
 venv/
 __pycache__/
-*.pyc
+node_modules/
 .env
 
 # ML models
