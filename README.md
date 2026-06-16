@@ -2,7 +2,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue.svg)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-TensorFlow%20%2F%20Keras-orange.svg)](https://tensorflow.org)
-[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 
 Early detection of lung cancer is vital to improving patient recovery and survival rates. This project delivers a deep learning pipeline utilizing a Convolutional Neural Network (CNN) to analyze medical imaging data (such as CT scans or X-Rays) and accurately classify the presence, risk level, or type of lung cancer.
 
@@ -60,20 +60,9 @@ Applying morphological operations or binary thresholding to clear background noi
 Augmenting training datasets to prevent model overfitting.
 
 ## 🧠 Model Training
-The network relies on an iterative combination of Convolutional, Max Pooling, and Dense layers (or advanced Transfer Learning backbones like VGG16/InceptionV3) to lock onto lung nodules and compute malignant probabilities.
+The network relies on an iterative combination of Convolutional, Max Pooling, and Dense layers (or advanced Transfer Learning backbones like ResNet-50/VGG16) to lock onto lung nodules and compute malignant probabilities.
 
-## 💻 Usage
-To Train the Model
-If you want to re-train the model or fine-tune it with your custom local dataset, execute:
 
-Bash
-python preprocess.py --train
-To Launch the Interface
-Run the user-facing application script to load up the image classifier GUI/Web dashboard:
-
-Bash
-python app.py
-Simply load an image scan (.jpg, .png, or .dcm), press Predict, and view the diagnostic result instantly.
 
 ## 📈 Evaluation Metrics
 The framework validates performance against standardized classification matrices, achieving high benchmarks on:
