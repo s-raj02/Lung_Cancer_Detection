@@ -84,20 +84,8 @@ Precision, Recall, and F1-Scores
 
 Confusion Matrix Outputs
 
-## 🤝 Contributing
-Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+## 👨‍💻 Author
 
-Fork the Project
+Sudhanshu Raj
 
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-
-Push to the Branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-
-
-## 📧 Contact
-Project Link: https://github.com/s-raj02/Lung_Cancer_Detection
+GitHub: https://github.com/s-raj02
