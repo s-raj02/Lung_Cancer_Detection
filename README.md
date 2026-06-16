@@ -2,7 +2,6 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue.svg)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-TensorFlow%20%2F%20Keras-orange.svg)](https://tensorflow.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 Early detection of lung cancer is vital to improving patient recovery and survival rates. This project delivers a deep learning pipeline utilizing a Convolutional Neural Network (CNN) to analyze medical imaging data (such as CT scans or X-Rays) and accurately classify the presence, risk level, or type of lung cancer.
