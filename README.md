@@ -6,6 +6,8 @@ Lung cancer is one of the leading causes of cancer-related deaths worldwide. Ear
 
 The system leverages **Transfer Learning** with **ResNet-50** and **VGG-16** architectures to classify lung images into multiple categories and assist in early diagnosis. The models are trained on preprocessed lung image datasets and evaluated using various performance metrics including accuracy, loss, confusion matrix, precision, recall, and F1-score.
 
+In addition to model development, the project includes a **web-based application** that enables users to securely log in, upload lung images, and receive real-time AI-powered predictions through an intuitive interface.
+
 ---
 
 ## 🎯 Objectives
@@ -15,6 +17,7 @@ The system leverages **Transfer Learning** with **ResNet-50** and **VGG-16** arc
 * Address class imbalance using SMOTE.
 * Improve diagnostic accuracy through transfer learning.
 * Assist healthcare professionals in early lung cancer detection.
+* Deploy the trained model through a user-friendly web application.
 
 ---
 
@@ -26,6 +29,8 @@ https://github.com/s-raj02/Lung_Cancer_Detection
 
 ## 🧠 Technologies Used
 
+### Deep Learning & Data Science
+
 * Python
 * TensorFlow
 * Keras
@@ -35,13 +40,25 @@ https://github.com/s-raj02/Lung_Cancer_Detection
 * Matplotlib
 * Scikit-learn
 * Imbalanced-Learn (SMOTE)
+
+### Web Development
+
+* Flask
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap
+
+### Development Environment
+
 * Google Colab
+* Jupyter Notebook
 
 ---
 
 ## 📊 Dataset
 
-The dataset consists of lung cancer images categorized into three classes:
+The dataset consists of lung cancer images categorized into the following classes:
 
 * Normal Lung
 * Adenocarcinoma
@@ -61,7 +78,7 @@ Images are preprocessed before training to ensure consistency and improve model 
 * Train-Test-Validation Split (70:15:15)
 * SMOTE for Class Balancing
 
-The dataset was divided into:
+### Dataset Split
 
 * Training Set – 70%
 * Validation Set – 15%
@@ -77,7 +94,7 @@ The preprocessing pipeline improves model robustness and reduces bias caused by 
 
 ResNet-50 is used as a feature extractor through transfer learning.
 
-Key Components:
+#### Key Components
 
 * Pre-trained ResNet-50 Backbone
 * Frozen Base Layers
@@ -169,15 +186,107 @@ The prediction results demonstrate the practical applicability of deep learning 
 
 ---
 
+## 🌐 Web Application Interface
+
+The project includes a fully functional web application that allows users to interact with the trained model through a simple and secure interface.
+
+### 🔐 User Authentication
+
+The application provides secure user authentication features:
+
+* User Registration
+* User Login
+* Logout Functionality
+* Session Management
+* Secure Access Control
+
+### 📤 Lung Image Upload
+
+Users can upload lung images directly through the application.
+
+Features include:
+
+* Image Upload from Local Device
+* Image Validation
+* Automatic Image Preprocessing
+* Real-Time Prediction
+
+### 🤖 AI Prediction System
+
+After uploading an image:
+
+1. The image is preprocessed automatically.
+2. The trained ResNet-50 model performs classification.
+3. The system predicts the lung condition.
+4. Results are displayed instantly.
+
+### 📊 Result Dashboard
+
+The dashboard displays:
+
+* Uploaded Image Preview
+* Predicted Disease Category
+* Model Output
+* Confidence Score (if implemented)
+* User-Friendly Results Interface
+
+### 💻 User Workflow
+
+```text
+User Login/Register
+          │
+          ▼
+Upload Lung Image
+          │
+          ▼
+Image Preprocessing
+          │
+          ▼
+ResNet-50 Model Prediction
+          │
+          ▼
+Disease Classification
+          │
+          ▼
+Result Dashboard
+```
+
+### ✅ Benefits of the Web Application
+
+* Easy-to-use interface.
+* Real-time disease prediction.
+* Accessible from any web browser.
+* Bridges AI research with practical healthcare applications.
+* Demonstrates end-to-end deployment of deep learning models.
+
+---
+
 ## 📂 Project Structure
 
 ```text
 Lung_Cancer_Detection/
+
 │
 ├── Lung_Cancer_Detection.ipynb
 ├── Detection_of_Lung_Cancer.pdf
-├── Dataset/
 ├── README.md
+├── requirements.txt
+├── app.py
+│
+├── Dataset/
+│
+├── templates/
+│   ├── login.html
+│   ├── register.html
+│   ├── upload.html
+│   ├── dashboard.html
+│   └── result.html
+│
+├── static/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   └── uploads/
 │
 ├── Data_Preprocessing
 ├── Data_Augmentation
@@ -211,10 +320,16 @@ cd Lung_Cancer_Detection
 pip install -r requirements.txt
 ```
 
-### Run Notebook
+### Run the Application
 
 ```bash
-jupyter notebook
+python app.py
+```
+
+### Open in Browser
+
+```text
+http://localhost:5000
 ```
 
 ---
@@ -230,6 +345,7 @@ matplotlib
 opencv-python
 scikit-learn
 imbalanced-learn
+flask
 ```
 
 ---
@@ -244,6 +360,11 @@ imbalanced-learn
 * Multi-Class Disease Classification
 * Performance Visualization
 * Medical Imaging Analysis
+* Secure User Authentication
+* Web-Based Image Upload
+* Real-Time AI Prediction
+* Interactive Result Dashboard
+* End-to-End Healthcare Application
 
 ---
 
@@ -253,8 +374,10 @@ imbalanced-learn
 * Ensemble Learning Techniques
 * Real-Time Clinical Validation
 * Larger Medical Datasets
-* Web Application Deployment
-* GUI Development for Healthcare Professionals
+* Cloud Deployment
+* Mobile Application Development
+* Explainable AI (XAI) Integration
+* Healthcare Professional Dashboard
 
 These enhancements can further improve accuracy and practical applicability in healthcare environments.
 
