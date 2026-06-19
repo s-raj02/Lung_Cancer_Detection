@@ -1,80 +1,279 @@
-# 🫁 Lung Cancer Detection using Deep Learning
+# 🫁 Lung Cancer Detection Using Deep Learning
 
-[![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue.svg)](https://www.python.org/)
-[![Framework](https://img.shields.io/badge/Framework-TensorFlow%20%2F%20Keras-orange.svg)](https://tensorflow.org)
+## 📌 Project Overview
 
+Lung cancer is one of the leading causes of cancer-related deaths worldwide. Early detection significantly improves treatment outcomes and survival rates. This project presents a deep learning-based approach for automated lung cancer detection using medical imaging techniques.
 
-Early detection of lung cancer is vital to improving patient recovery and survival rates. This project delivers a deep learning pipeline utilizing a Convolutional Neural Network (CNN) to analyze medical imaging data (such as CT scans or X-Rays) and accurately classify the presence, risk level, or type of lung cancer.
+The system leverages **Transfer Learning** with **ResNet-50** and **VGG-16** architectures to classify lung images into multiple categories and assist in early diagnosis. The models are trained on preprocessed lung image datasets and evaluated using various performance metrics including accuracy, loss, confusion matrix, precision, recall, and F1-score.
 
 ---
 
-## 🚀 Features
+## 🎯 Objectives
 
-- **High-Accuracy CNN Architecture:** Custom-built or transfer-learning-based neural network optimized for clinical feature extraction.
-- **Robust Preprocessing Pipeline:** Automatic resizing, normalization, and data augmentation techniques (flipping, rotation, zooming) to counter class imbalances and improve generalization.
-- **Interactive UI/GUI:** Complete user-friendly application integration for uploading medical images and rendering predictions seamlessly in real-time.
-- **Comprehensive Evaluation:** Generates precision metrics, loss/accuracy curves, and classification reports.
+* Develop an automated lung cancer detection system using Deep Learning.
+* Compare the performance of ResNet-50 and VGG-16 architectures.
+* Address class imbalance using SMOTE.
+* Improve diagnostic accuracy through transfer learning.
+* Assist healthcare professionals in early lung cancer detection.
+
+---
+
+## 🚀 Project Repository
+
+https://github.com/s-raj02/Lung_Cancer_Detection
+
+---
+
+## 🧠 Technologies Used
+
+* Python
+* TensorFlow
+* Keras
+* OpenCV
+* NumPy
+* Pandas
+* Matplotlib
+* Scikit-learn
+* Imbalanced-Learn (SMOTE)
+* Google Colab
+
+---
+
+## 📊 Dataset
+
+The dataset consists of lung cancer images categorized into three classes:
+
+* Normal Lung
+* Adenocarcinoma
+* Squamous Cell Carcinoma
+* Stage 1 Cancer
+* Stage 2 Cancer
+* Advanced Stage Cancer
+
+Images are preprocessed before training to ensure consistency and improve model performance.
+
+### Data Preprocessing
+
+* Image Resizing (150 × 150)
+* Grayscale Conversion
+* Normalization
+* Dataset Shuffling
+* Train-Test-Validation Split (70:15:15)
+* SMOTE for Class Balancing
+
+The dataset was divided into:
+
+* Training Set – 70%
+* Validation Set – 15%
+* Testing Set – 15%
+
+The preprocessing pipeline improves model robustness and reduces bias caused by class imbalance.
+
+---
+
+## 🏗️ Model Architecture
+
+### ResNet-50
+
+ResNet-50 is used as a feature extractor through transfer learning.
+
+Key Components:
+
+* Pre-trained ResNet-50 Backbone
+* Frozen Base Layers
+* Flatten Layer
+* Dense Layer (128 Units, ReLU)
+* Softmax Output Layer
+* Adam Optimizer
+* Sparse Categorical Crossentropy Loss
+
+The model achieved superior performance in classification tasks.
+
+---
+
+### VGG-16
+
+VGG-16 is a deep convolutional neural network consisting of:
+
+* 13 Convolution Layers
+* 3 Fully Connected Layers
+* Transfer Learning Approach
+* Feature Extraction from Medical Images
+
+VGG-16 demonstrated strong performance with an accuracy of 88%.
+
+---
+
+## ⚙️ Training Strategy
+
+### Data Augmentation
+
+ImageDataGenerator is used to generate augmented image batches and improve model generalization.
+
+### Early Stopping
+
+Training automatically stops when validation loss does not improve for three consecutive epochs, preventing overfitting.
+
+### Training Configuration
+
+* Maximum Epochs: 80
+* Optimizer: Adam
+* Loss Function: Sparse Categorical Crossentropy
+* Accuracy Tracking
+* Validation Monitoring
+
+---
+
+## 📈 Results
+
+### Model Comparison
+
+| Metric        | ResNet-50 | VGG-16   |
+| ------------- | --------- | -------- |
+| Accuracy      | 92%       | 88%      |
+| Epochs        | 80        | 80       |
+| Minimum Loss  | 0.0450    | 0.214    |
+| Training Time | 6215 sec  | 9220 sec |
+
+ResNet-50 outperformed VGG-16 in terms of accuracy, loss reduction, and overall classification performance.
+
+---
+
+## 🔍 Evaluation Metrics
+
+The models were evaluated using:
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+* Confusion Matrix
+* Classification Report
+
+Performance metrics indicate strong generalization on unseen data and reliable disease classification.
+
+---
+
+## 🩺 Sample Predictions
+
+The trained model successfully classified various lung conditions including:
+
+* Normal Lung
+* Adenocarcinoma
+* Squamous Cell Carcinoma
+* Stage 1 Cancer
+* Stage 2 Cancer
+* Advanced Stage Cancer
+
+The prediction results demonstrate the practical applicability of deep learning in medical diagnosis.
 
 ---
 
 ## 📂 Project Structure
-```text
 
+```text
 Lung_Cancer_Detection/
-├── data/
-│   ├── train/               # Training dataset split
-│   └── test/                # Testing/Validation dataset split
-├── models/
-│   └── trained_model.h5     # Saved weights of the trained CNN model
-├── notebooks/
-│   └── Exploration.ipynb    # Jupyter notebook for EDA and model training
-├── app.py                   # Main GUI or Web Application interface
-├── preprocess.py            # Image manipulation and cleanup scripts
-├── requirements.txt         # List of external dependencies
-└── README.md                # Project documentation
+│
+├── Lung_Cancer_Detection.ipynb
+├── Detection_of_Lung_Cancer.pdf
+├── Dataset/
+├── README.md
+│
+├── Data_Preprocessing
+├── Data_Augmentation
+├── SMOTE_Balancing
+├── ResNet50_Model
+├── VGG16_Model
+├── Model_Training
+├── Model_Evaluation
+└── Prediction_System
 ```
 
-## 🛠️ Installation & Setup
-Follow these steps to run the project locally on your machine:
+---
 
-1. Clone the Repository
-Bash
-git clone [https://github.com/s-raj02/Lung_Cancer_Detection.git](https://github.com/s-raj02/Lung_Cancer_Detection.git)
+## ▶️ How to Run
 
-2. Create and Activate a Virtual Environment (Recommended)
-Bash
-## On Windows
-python -m venv venv
-venv\Scripts\activate
+### Clone Repository
 
+```bash
+git clone https://github.com/s-raj02/Lung_Cancer_Detection.git
+```
 
+### Navigate to Project Directory
 
-## 📊 Dataset & Model Workflow
-🧪 Preprocessing
-Medical scan images pass through a data pipeline to eliminate noise and segment the Region of Interest (ROI). Steps include:
+```bash
+cd Lung_Cancer_Detection
+```
 
-Rescaling pixel values to [0, 1].
+### Install Dependencies
 
-Applying morphological operations or binary thresholding to clear background noise.
+```bash
+pip install -r requirements.txt
+```
 
-Augmenting training datasets to prevent model overfitting.
+### Run Notebook
 
-## 🧠 Model Training
-The network relies on an iterative combination of Convolutional, Max Pooling, and Dense layers (or advanced Transfer Learning backbones like ResNet-50/VGG16) to lock onto lung nodules and compute malignant probabilities.
+```bash
+jupyter notebook
+```
 
+---
 
+## 📦 Required Libraries
 
-## 📈 Evaluation Metrics
-The framework validates performance against standardized classification matrices, achieving high benchmarks on:
+```text
+tensorflow
+keras
+numpy
+pandas
+matplotlib
+opencv-python
+scikit-learn
+imbalanced-learn
+```
 
-Accuracy & Loss Curves
+---
 
-Precision, Recall, and F1-Scores
+## 🔥 Key Features
 
-Confusion Matrix Outputs
+* Deep Learning-Based Medical Image Classification
+* Transfer Learning with ResNet-50 and VGG-16
+* Automated Lung Cancer Detection
+* SMOTE-Based Class Balancing
+* Early Stopping and Data Augmentation
+* Multi-Class Disease Classification
+* Performance Visualization
+* Medical Imaging Analysis
+
+---
+
+## 📚 Future Improvements
+
+* Hyperparameter Optimization
+* Ensemble Learning Techniques
+* Real-Time Clinical Validation
+* Larger Medical Datasets
+* Web Application Deployment
+* GUI Development for Healthcare Professionals
+
+These enhancements can further improve accuracy and practical applicability in healthcare environments.
+
+---
+
+## ⚠️ Disclaimer
+
+This project is developed for educational and research purposes only. It should not be used as a substitute for professional medical diagnosis or treatment.
+
+---
 
 ## 👨‍💻 Author
 
-Sudhanshu Raj
+**Sudhanshu Raj**
 
 GitHub: https://github.com/s-raj02
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
